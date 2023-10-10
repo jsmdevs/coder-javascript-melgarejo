@@ -1,25 +1,38 @@
-function convertidor(dolar, euro, libra) {
-    let resul = 0;
+function leerMonto(moneda){
+    monto = parseInt(prompt(`Ingrese la cantidad de dinero (en ${moneda}) que desea convertir: `));
+    return monto
+}
 
-    let option = parseInt(prompt`Seleccione qué tipo de divisa desea convertir
+function convertidor() {
+    let resul = 0;
+    let monto = 0
+    const option = parseInt(prompt`Seleccione qué tipo de divisa desea convertir
     1. Dólar oficial
     2. Euro
-    3. Libra esterlina`);
-
-    let peso = parseInt(prompt("Ingrese la cantidad de dinero (en pesos) que desea convertir: "));
+    3. Libra esterlina
+    4. Ver información sobre las divisas`);
+    const convertir = (a, b) => a * b
 
     switch (option) {
         case 1:
-            resul = dolar * peso;
-            console.log(`El equivalente a $${peso} pesos es igual a $${resul} dólares `);
+            monto = leerMonto(divisas[0].moneda)
+            resul = convertir(divisas[0].valor, monto)
+            console.log(`El equivalente a $${monto} dólares es igual a $${resul} pesos `);
             break;
         case 2:
-            resul = euro * peso;
-            console.log(`El equivalente a $${peso} pesos es igual a $${resul} euros `);
+            monto = leerMonto(divisas[1].moneda)
+            resul = convertir(divisas[1].valor, monto);
+            console.log(`El equivalente a $${monto} euros es igual a $${resul} pesos `);
             break;
         case 3:
-            resul = libra * peso;
-            console.log(`El equivalente a $${peso} pesos es igual a $${resul} libras `);
+            monto = leerMonto(divisas[2].moneda)
+            resul = convertir(divisas[2].valor, monto);
+            console.log(`El equivalente a $${monto} libras es igual a $${resul} pesos `);
+            break;
+        case 4:
+            for (i=0; i < divisas.length; i++){
+                console.log(divisas[i])
+            }
             break;
         default:
             alert("Elija una de las divisas anteriores.");
@@ -28,55 +41,74 @@ function convertidor(dolar, euro, libra) {
 
 }
 
-function impuestos(dolar) {
+function impuestos() {
     resul = 0;
     let option = parseInt(prompt(`¿En qué divisa desea calcular los impuestos?
     1. Peso AR$
     2. Dólar U$S`));
 
+    const calcImpuesto = a => impuesto / 100 * a
+    const calcFinalPesos = (a, b) => a + b
+    const calcFinalDolar = (a, b) => (a + divisas[0].valor) * b
+
+    function calcImpuestoPesos() {
+        let montoPesos = parseInt(prompt(`Ingrese el monto en pesos que desea calcular: `));
+        let resulFinal = calcFinalPesos(calcImpuesto(montoPesos), montoPesos)
+        console.log(`El precio total con impuestos sería de $${resulFinal} pesos`);
+    }
+
+    function calcImpuestoDolar() {
+        let montoDolar = parseInt(prompt(`Ingrese el monto en dólares que desea calcular: `));
+        let resulFinal = calcFinalDolar(calcImpuesto(divisas[0].valor), montoDolar)
+        console.log(`El precio total con impuestos sería de $${resulFinal} pesos`);
+    }
+
     switch (option) {
         case 1:
-            let montoPesos = parseInt(prompt(`Ingrese el monto en pesos que desea calcular: `));
-            resul = (75 / 100) * montoPesos;
-            resul = resul + montoPesos;
-            console.log(`El precio total con impuestos sería de $${resul} pesos`);
+            calcImpuestoPesos()
             break;
         case 2:
-            let montoDolar = parseInt(prompt(`Ingrese el monto que desea calcular: `));
-            resul = (75 / 100) * dolar;
-            resul = resul + dolar;
-            resul = resul * montoDolar;
-            console.log(`El precio total con impuestos sería de $${resul} pesos`);
+            calcImpuestoDolar()
             break;
         default:
             alert("Seleccione una de las opciones anteriores.");
     }
 }
 
-const dolar = 350;
-const euro = 369;
-const libra = 425;
+const impuesto = 75;
 
-edad = parseInt(prompt(`Debe ser mayor de 18 años para utilizar el sistema. Por favor, ingrese su edad para corroborarla`))
+const divisas = [{pais: "Estados Unidos", moneda: "dolar", valor: 350}, {pais: "España", moneda: "euro", valor: 369}, {pais: "Reino Unido", moneda: "libra", valor: 425}]
 
-if (edad >= 18) {
+class Edad {
+    constructor(edad) {
+        this.edad = edad
+    }
+
+    esMayor() {
+        return this.edad >= 18
+    }
+}
+
+const edad = new Edad(parseInt(prompt("Debe ser mayor de 18 años para utilizar el sistema. Por favor, ingrese su edad para corroborarla")));
+
+if (edad.esMayor()) {
     let option = parseInt(prompt(`¿Qué desea realizar?,
-1. Convertir divisas
-2. Calcular impuestos`))
+    1. Convertir divisas
+    2. Calcular impuestos`))
 
     switch (option) {
         case 1:
-            convertidor(dolar, euro, libra);
+            convertidor();
             break
         case 2:
-            impuestos(dolar);
+            impuestos();
             break;
         default:
             alert("Elija una de las dos opciones anteriores.")
             break;
     }
 
-}else{
+} else {
     alert("No eres mayor de 18. Tienes restringido el acceso.")
-} 
+}
 
