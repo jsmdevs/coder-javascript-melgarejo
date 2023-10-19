@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #333333;
+    background-color: #EBFBFA;
+}
+
+p, label {
+    font-weight: 500;
+}
+
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.section .section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+nav {
+    background-color: #EBFBFA;
+    border-bottom: solid;
+    border-color: #08403f2f;
+    border-width: .1rem;
+    padding-block: .8rem !important;
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+}
+
+nav img {
+    width: 15rem !important;
+}
+
+nav a {
+    color: #08403F !important;
+    font-weight: 600 !important;
+}
+
+nav a:hover {
+    color: #08403fa9 !important;
+}
+
+nav ul {
+    justify-content: end;
+}
+
+.navbar-collapse {
+    flex-grow: 0 !important;
+}
+
+.convertir-divisas {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.convertir-divisas input {
+    width: 10rem;
+}
+
+.convertir-divisas .intro-monto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem
+}
+
+.convertir-divisas .btn {
+    font-weight: 500 !important;
+    background-color: #08403F;
+    color: #fff;
+}
+
+.convertir-divisas .btn:hover {
+    background-color: transparent;
+    border: solid;
+    border-width: .1rem;
+}
+
+.convertir-divisas .resul-conversion {
+    display: flex;
+    flex-direction: column;
+}
+
+.convertir-divisas .resul-conversion .resul-divisa {
+    display: flex;
+    justify-content: center;
+    gap: .3rem
+}
+
+.info-divisas  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-divisas .item-divisas {
+    display: flex;
+    gap: .3em;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: #333333;
+    color: #bebebe;
+    font-weight: 500;
+    padding: 3rem;
+}
+
+footer img {
+    width: 300px;
+}

@@ -3,6 +3,26 @@ function leerMonto(moneda){
     return monto
 }
 
+function infoDivisas() {
+    const opcion = parseInt(prompt(`
+    1. Buscar una divisa
+    2. Ver todas las divisas`))
+
+    switch(opcion) {
+        case 1:
+            const busqueda = prompt("Ingrese la divisa que desea buscar: ")
+            resul = divisas.find((e) => e.moneda === busqueda)
+            console.log(resul) 
+            break;
+
+        case 2:
+            for (i=0; i < divisas.length; i++){
+                console.log(divisas[i])
+            }
+            break;
+    }
+}
+
 function convertidor() {
     let resul = 0;
     let monto = 0
@@ -30,10 +50,7 @@ function convertidor() {
             console.log(`El equivalente a $${monto} libras es igual a $${resul} pesos `);
             break;
         case 4:
-            for (i=0; i < divisas.length; i++){
-                console.log(divisas[i])
-            }
-            break;
+            infoDivisas()
         default:
             alert("Elija una de las divisas anteriores.");
             break;
@@ -77,7 +94,7 @@ function impuestos() {
 
 const impuesto = 75;
 
-const divisas = [{pais: "Estados Unidos", moneda: "dolar", valor: 350}, {pais: "España", moneda: "euro", valor: 369}, {pais: "Reino Unido", moneda: "libra", valor: 425}]
+const divisas = [{pais: "Estados Unidos", moneda: "dólar", valor: 350}, {pais: "España", moneda: "euro", valor: 369}, {pais: "Reino Unido", moneda: "libra", valor: 425}]
 
 class Edad {
     constructor(edad) {
