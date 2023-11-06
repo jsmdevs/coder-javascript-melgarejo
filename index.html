@@ -1,136 +1,215 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <title>Calc Smart | Calculadora de divisas e impuestos</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
+    <title>Precio Total | Precios de los servicios en Argentina</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
-  <header>
-    <!-- Nav tabs -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-          <div class="container">
-            <a href="#"><img src="img/logo.svg" alt=""></a>
-            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#convertir-divisas">Convertir divisas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#calcular-impuestos">Calcular impuestos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#info-divisas">Información de divisas</a>
-                    </li>
-                </ul>
-            </div>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <div class="container">
-        <div class="section" id="convertir-divisas">
-            <div class="section-container">
-                <h1 class="text-center m-4">Convertir divisas</h1>
-            <div class="convertir-divisas">
-                <div class="mb-3 intro-monto">
-                    <label for="">Introduce el monto en pesos:</label>
-                  <input type="text" class="form-control" name="" id=""placeholder="">
-                  <a name="" id="" class="btn" href="#" role="button">Convertir</a>
-                </div>
-                <div class="resul-conversion">
-                    <div class="resul-divisa">
-                        <p>Dólar</p>
-                        <p>=</p>
-                        <p>USD $0</p>
-                    </div>
-                    <div class="resul-divisa">
-                        <p>Euro</p>
-                        <p>=</p>
-                        <p>EUR $0</p>
-                    </div>
-                    <div class="resul-divisa">
-                        <p>Libra</p>
-                        <p>=</p>
-                        <p>GBP $0</p>
-                    </div>
-
+    <header>
+        <!-- Nav tabs -->
+        <nav>
+            <div class="navbar">
+                <a class="carrito-mobile" href="">Total: $<span id="precio-total-navbar">0,00</span></a>
+                <div class="logo">
+                    <img src="img/logo.svg" alt="">
                 </div>
             </div>
+        </nav>
+    </header>
+    <main>
+        <div class="section">
+            <h1>Películas, Series y TV</h1>
+            <div class="card-container">
+                <div class="card netflix">
+                    <div class="precios-container color-netflix">
+                        <div class="precios" id="netflix"></div>
+                    </div>
+                    <div class="logo" id="logo-netflix">
+                        <img src="img/logo-bands/video/netflix.svg" alt="">
+                    </div>
+                </div>
+                <div class="card prime-video">
+                    <div class="logo logo-invert">
+                        <img src="img/logo-bands/video/prime-video.svg" alt="">
+                    </div>
+                    <div class="precios-container precios-container-invert invert color-prime-video">
+                        <div class="precios" id="prime-video"></div>
+                    </div>
+                </div>
+                <div class="card hbo-max">
+                    <div class="precios-container color-hbo-max">
+                        <div class="precios" id="hbo-max"></div>
+                    </div>
+                    <div class="logo logo">
+                        <img src="img/logo-bands/video/hbo-max.svg" alt="">
+                    </div>
+                </div>
+                <div class="card disney+-star+">
+                    <div class="logo logo-invert">
+                        <img src="img/logo-bands/video/disney+star+.svg" alt="">
+                    </div>
+                    <div class="precios-container precios-container-invert color-disneyplus-starplus">
+                        <div class="precios" id="disney+-star+"></div>
+                    </div>
+                </div>
+                <div class="card youtube-premium">
+                    <div class="precios-container color-youtube-premium">
+                        <div class="precios" id="youtube-premium"></div>
+                    </div>
+                    <div class="logo">
+                        <img src="img/logo-bands/video/yt-premium.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <h1>Música y Podcast</h1>
+            <div class="card-container">
+                <div class="card spotify">
+                    <div class="logo logo-invert spotify">
+                        <img src="img/logo-bands/musica/spotify.svg" alt="">
+                    </div>
+                    <div class="precios-container precios-container-invert color-spotify">
+                        <div class="precios" id="spotify"></div>
+                    </div>
+                </div>
+                <div class="card apple-music">
+                    <div class="precios-container color-apple-music">
+                        <div class="precios" id="apple-music"></div>
+                    </div>
+                    <div class="logo logo">
+                        <img src="img/logo-bands/musica/apple-music.svg" alt="">
+                    </div>
+                </div>
+                <div class="card tidal">
+                    <div class="logo logo-invert">
+                        <img src="img/logo-bands/musica/tidal.svg" alt="">
+                    </div>
+                    <div class="precios-container precios-container-invert color-tidal">
+                        <div class="precios" id="tidal"></div>
+                    </div>
+                </div>
+                <div class="card deezer">
+                    <div class="precios-container color-deezer">
+                        <div class="precios" id="deezer"></div>
+                    </div>
+                    <div class="logo logo">
+                        <img src="img/logo-bands/musica/deezer.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <h1>Juegos</h1>
+            <div class="card-container">
+                <div class="card nvidia-geforce-now">
+                    <div class="logo logo-invert nvidia-geforce-now">
+                        <img src="img/logo-bands/gaming/nvidia-gerforce-now.svg" alt="">
+                    </div>
+                    <div class="precios-container precios-container-invert color-nvidia-geforce-now">
+                        <div class="precios" id="nvidia-geforce-now"></div>
+                    </div>
+                </div>
+                <div class="card playstation-plus">
+                    <div class="precios-container color-playstation-plus">
+                        <div class="precios" id="playstation-plus"></div>
+                    </div>
+                    <div class="logo logo">
+                        <img src="img/logo-bands/gaming/playStationplus.svg" alt="">
+                    </div>
+                </div>
+                <div class="card ea-play">
+                    <div class="logo logo-invert">
+                        <img src="img/logo-bands/gaming/ea-play.svg" alt="">
+                    </div>
+                    <div class="precios-container precios-container-invert color-ea-play">
+                        <div class="precios" id="ea-play"></div>
+                    </div>
+                </div>
+                <div class="card xbox-game-pass">
+                    <div class="precios-container color-xbox-game-pass">
+                        <div class="precios" id="xbox-game-pass"></div>
+                    </div>
+                    <div class="logo logo">
+                        <img src="img/logo-bands/gaming/xbox-game-pass.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <h1>Almacenamiento</h1>
+            <div class="card-container">
+                <div class="card dropbox">
+                    <div class="logo logo-invert dropbox">
+                        <img src="img/logo-bands/storage/dropbox.svg" alt="">
+                    </div>
+                    <div class="precios-container precios-container-invert color-dropbox">
+                        <div class="precios" id="dropbox"></div>
+                    </div>
+                </div>
+                <div class="card one-drive">
+                    <div class="precios-container color-one-drive">
+                        <div class="precios" id="one-drive"></div>
+                    </div>
+                    <div class="logo logo">
+                        <img src="img/logo-bands/storage/onedrive.svg" alt="">
+                    </div>
+                </div>
+                <div class="card icloud">
+                    <div class="logo logo-invert">
+                        <img src="img/logo-bands/storage/icloud.svg" alt="">
+                    </div>
+                    <div class="precios-container precios-container-invert color-icloud">
+                        <div class="precios" id="icloud"></div>
+                    </div>
+                </div>
+                <div class="card google-one">
+                    <div class="precios-container color-google-one">
+                        <div class="precios" id="google-one"></div>
+                    </div>
+                    <div class="logo logo">
+                        <img src="img/logo-bands/storage/google-one.svg" alt="">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="section"  id="calcular-impuestos">
-            <div class="section-container">
-                <h1 class="text-center m-4">Calcular impuestos</h1>
-            <div class="convertir-divisas">
-                <div class="mb-3 intro-monto">
-                    <label for="">Introduce el monto en <strong>pesos</strong>:</label>
-                  <input type="text" class="form-control" name="" id=""placeholder="">
-                  <a name="" id="" class="btn" href="#" role="button">Convertir</a>
-                </div>
-                <div class="mb-3 intro-monto">
-                    <label for="">Introduce el monto en <strong>dólares</strong>:</label>
-                  <input type="text" class="form-control" name="" id=""placeholder="">
-                  <a name="" id="" class="btn" href="#" role="button">Convertir</a>
-                </div>
-                <div class="resul-conversion">
-                    <div class="resul-divisa">
-                        <p>Total con impuestos</p>
-                        <p>=</p>
-                        <p>ARS $0</p>
-                    </div>
+        <div class="carrito-container">
+            <div class="carrito" id="carrito">
+                <div class="list-serv-select" id="list-serv-select"></div>
+                <div class="impuestos">
+                    <h3>Impuestos a aplicar</h3>
+                    <div id="impuestos-0"></div>
+                    <div id="impuestos-1"></div>
+                    <div id="impuestos-2"></div>
+                    <div id="impuestos-3"></div>
+                    <div class="resultado" id="impuestos-4"></div>
                 </div>
             </div>
+            <div class="carrito-vacio" id="carrito-vacio">
+                <p>Seleccione los servicios y planes que desee</p>
+            </div>
+            <div class="total-final">
+                <h3>Precio final</h3>
+                <p>Con impuestos incluidos = <strong>$<span id="total-final">0,00</span></strong></p>
             </div>
         </div>
-        <div class="section" id="info-divisas">
-            <div class="section-container">
-                <h1 class="text-center m-4">Información de divisas</h1>
-            <div class="info-divisas">
-                <div class="item-divisas">
-                    <p>Dólar</p>
-                    <p>:</p>
-                    <p>USD $0</p>
-                </div>
-                <div class="item-divisas">
-                    <p>Euro</p>
-                    <p>:</p>
-                    <p>EUR $0</p>
-                </div>
-                <div class="item-divisas">
-                    <p>Libra</p>
-                    <p>:</p>
-                    <p>GBP $0</p>
-                </div>
-            </div>
-            </div>
+    </main>
+    <!-- <footer>
+        <div class="copy">
+            <img src="img/logo.svg" alt="">
+            <p>©<span id="date-copy"></span> - Todos los derechos reservados</p>
         </div>
-    </div>
-  </main>
-  <footer>
-    <img src="img/logo-footer.svg" alt="">
-    <p>©2023 - Todos los derechos reservados</p>
-  </footer>
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="js/script.js"></script>
+        <div class="info">
+            <div class="redes">
+                <i class="bi bi-github"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-twitter-x"></i>
+            </div>
+            <p>Dev. Joaquín Melgarejo</p>
+        </div>
+    </footer> -->
+    <!-- JavaScript-->
+    <script src="js/script.js"></script>
 
 </body>
 
