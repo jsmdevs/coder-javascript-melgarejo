@@ -1,8 +1,9 @@
 :root {
     --color-primary: #410FF8;
     --color-secundary: #252525;
+    --color-background: #f1f1f1;
     --color-white: #fff;
-    --color-fuente-footer: #E3E3E3;
+    --color-fuente-footer: #CACACA;
 
     --shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.25);
 
@@ -21,11 +22,29 @@
     --color-ea-play:#FF4747;
     --color-xbox-game-pass:#107C10;
     --color-dropbox:#0061FF;
-    --color-one-drive:#0078D4;
+    --color-onedrive:#0078D4;
     --color-icloud:#3E9DF6;
     --color-google-one:#5F6368;
     --color-adobe-creative:#BE4AFC;
     --color-youtube-premium:#FF0000;
-    
+    --color-paramount-plus: #2078FF;
+    --color-amazon-music:#3F00ED;
+    --color-youtube-music:#FF0000;
+    --color-nintendo-online:#E60012;
+    --color-apple-arcade:#000;
+    --color-qobuz:#000;
+    --color-mega:#D9272E;
+    --color-crunchyroll:#DF6300;
+    --color-hulu:#1CE783;
+    --color-fi-tv:#E10600;
+    --color-adobe-creative:#BE4AFC;
+    --color-microsoft-365:#00A4EF;
+    --color-nordvpn:#4580FF;
+    --color-apple-tv:#000;
+    --color-google-workspace:#5F6368;
+    --color-malwarebytes:#004DDC;
+
+    --color-background-1: #410ff8;
+    --color-background-2: #00b9ff;
 
 }
